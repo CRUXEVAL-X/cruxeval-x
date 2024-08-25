@@ -1,0 +1,20 @@
+[
+    {
+        "code": "\ndef f(my_list)\n    count = 0\n    my_list.each do |i|\n        if i.length % 2 == 0\n            count += 1\n        end\n    end\n    count\nend\nrequire 'test/unit'\nclass TestHumanEval < Test::Unit::TestCase\n  def test_f\n    candidate = method(:f)\n    assert_equal(3, candidate.call([\"mq\", \"px\", \"zy\"]))\n  end\nend\n",
+        "id": 0,
+        "inputs": "candidate.call([\"mq\", \"px\", \"zy\"])",
+        "outputs": "3"
+    },
+    {
+        "code": "\ndef f(s1, s2)\n    s1+s2\nend\nrequire 'test/unit'\nclass TestHumanEval < Test::Unit::TestCase\n  def test_f\n    candidate = method(:f)\n    assert_equal(\"banana\", candidate.call(\"ba\", \"nana\"))\n  end\nend\n",
+        "id": 1,
+        "inputs": "candidate.call(\"ba\", \"nana\")",
+        "outputs": "\"banana\""
+    },
+    {
+        "code": "\ndef f(d)\n    x = nil\n    y = nil\n    if d.key?('x')\n        x = d['x']\n    end\n    if d.key?('y')\n        y = d['y']\n    end\n    [x, y]\nend\nrequire 'test/unit'\nclass TestHumanEval < Test::Unit::TestCase\n  def test_f\n    candidate = method(:f)\n    assert_equal([5, 12], candidate.call({\"x\" => 5, \"y\" => 12}))\n  end\nend\n",
+        "id": 2,
+        "inputs": "candidate.call({\"x\" => 5, \"y\" => 12})",
+        "outputs": "[5, 12]"
+    }
+]

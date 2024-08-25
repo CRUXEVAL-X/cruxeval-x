@@ -1,0 +1,20 @@
+[
+    {
+        "code": "\nimport java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    public static long f(ArrayList<String> my_list) {\n        long count = 0;\n        for (String i : my_list) {\n            if (i.length() % 2 == 0) {\n                count += 1;\n            }\n        }\n        return count;\n    }\n    public static void main(String[] args) {\n    assert(f((new ArrayList<String>(Arrays.asList((String)\"mq\", (String)\"px\", (String)\"zy\")))) == (3l));\n    }\n\n}\n",
+        "id": 0,
+        "inputs": "f((new ArrayList<String>(Arrays.asList((String)\"mq\", (String)\"px\", (String)\"zy\"))))",
+        "outputs": "(3l)"
+    },
+    {
+        "code": "\nimport java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    public static String f(String s1, String s2) {\n        return s1.concat(s2);\n    }\n    public static void main(String[] args) {\n    assert(f((\"ba\"), (\"nana\")).equals((\"banana\")));\n    }\n\n}\n",
+        "id": 1,
+        "inputs": "f((\"ba\"), (\"nana\"))",
+        "outputs": "(\"banana\")"
+    },
+    {
+        "code": "\nimport java.util.*;\nimport java.lang.reflect.*;\nimport org.javatuples.*;\nimport java.security.*;\nimport java.math.*;\nimport java.io.*;\nimport java.util.stream.*;\nclass Problem {\n    public static Pair<Long, Long> f(HashMap<String,Long> d) {\n        Long x = null;\n        Long y = null;\n        if (d.containsKey(\"x\")) {\n            x = d.get(\"x\");\n        }\n        if (d.containsKey(\"y\")) {\n            y = d.get(\"y\");\n        }\n        return new Pair<>(x, y);\n    }\n    public static void main(String[] args) {\n    assert(f((new HashMap<String,Long>(Map.of(\"x\", 5l, \"y\", 12l)))).equals((Pair.with(5l, 12l))));\n    }\n\n}\n",
+        "id": 2,
+        "inputs": "f((new HashMap<String,Long>(Map.of(\"x\", 5l, \"y\", 12l))))",
+        "outputs": "(Pair.with(5l, 12l))"
+    }
+]

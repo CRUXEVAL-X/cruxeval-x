@@ -1,0 +1,11 @@
+python dataset_build/5_iterating.py \
+    --langs "['java', 'cpp', 'cs', 'd', 'go', 'jl', 'js', 'lua', 'php', 'pl', 'py', 'r', 'rb', 'rkt', 'rs', 'scala', 'sh', 'swift', 'ts']" \
+    --tmp 0.8 \
+    --model_name deepseek-coder-33b-instruct \
+    --model_dir ./model \
+    --max_iter 50 \
+    --tot_data_num 800 \
+    --tests_dir ./datasets/cruxeval_preprocessed \
+    --right_dir ./datasets/cruxeval_generated_repaired \
+    --python_dir ./datasets/cruxeval \
+    --output_dir ./datasets/cruxeval_iterated \

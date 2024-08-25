@@ -1,0 +1,20 @@
+[
+    {
+        "code": "\nusing System;\nusing System.Numerics;\nusing System.Diagnostics;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Text;\nusing System.Security.Cryptography;\nclass Problem {\n    public static long F(List<string> my_list) {\n        long count = 0;\n        foreach(var i in my_list)\n        {\n            if (i.Length % 2 == 0)\n            {\n                count += 1;\n            }\n        }\n        return count;\n    }\n    public static void Main(string[] args) {\n    Debug.Assert(F((new List<string>(new string[]{(string)\"mq\", (string)\"px\", (string)\"zy\"}))) == (3L));\n    }\n\n}\n",
+        "id": 0,
+        "inputs": "F((new List<string>(new string[]{(string)\"mq\", (string)\"px\", (string)\"zy\"})))",
+        "outputs": "(3L)"
+    },
+    {
+        "code": "\nusing System;\nusing System.Numerics;\nusing System.Diagnostics;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Text;\nusing System.Security.Cryptography;\nclass Problem {\n    public static string F(string s1, string s2) {\n        return s1 + s2;\n    }\n    public static void Main(string[] args) {\n    Debug.Assert(F((\"ba\"), (\"nana\")).Equals((\"banana\")));\n    }\n\n}\n",
+        "id": 1,
+        "inputs": "F((\"ba\"), (\"nana\"))",
+        "outputs": "(\"banana\")"
+    },
+    {
+        "code": "\nusing System;\nusing System.Numerics;\nusing System.Diagnostics;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Text;\nusing System.Security.Cryptography;\nclass Problem {\n    public static Tuple<long, long> F(Dictionary<string,long> d) {\n        long x = 0;\n        long y = 0;\n        if (d.ContainsKey(\"x\"))\n        {\n            x = d[\"x\"];\n        }\n        if (d.ContainsKey(\"y\"))\n        {\n            y = d[\"y\"];\n        }\n        return Tuple.Create(x, y);\n    }\n    public static void Main(string[] args) {\n    Debug.Assert(F((new Dictionary<string,long>(){{\"x\", 5L}, {\"y\", 12L}})).Equals((Tuple.Create(5L, 12L))));\n    }\n\n}\n",
+        "id": 2,
+        "inputs": "F((new Dictionary<string,long>(){{\"x\", 5L}, {\"y\", 12L}}))",
+        "outputs": "(Tuple.Create(5L, 12L))"
+    }
+]

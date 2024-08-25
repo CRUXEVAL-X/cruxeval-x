@@ -1,0 +1,20 @@
+[
+    {
+        "code": "\nfunction f(my_list::Vector{String})::Int64 \n    count = 0\n    for i in my_list\n        if length(i) % 2 == 0\n            count += 1\n        end\n    end\n    return count\nend\nusing Test\n\n@testset begin\n\ncandidate = f;\n\t@test(candidate([\"mq\", \"px\", \"zy\"]) == 3)\nend\n",
+        "id": 0,
+        "inputs": "candidate([\"mq\", \"px\", \"zy\"])",
+        "outputs": "3"
+    },
+    {
+        "code": "\nfunction f(s1::String, s2::String)::String \n    return s1 * s2\nend\nusing Test\n\n@testset begin\n\ncandidate = f;\n\t@test(candidate(\"ba\", \"nana\") == \"banana\")\nend\n",
+        "id": 1,
+        "inputs": "candidate(\"ba\", \"nana\")",
+        "outputs": "\"banana\""
+    },
+    {
+        "code": "\nfunction f(d::Dict{String, Int64})::Tuple{Int64, Int64}\n    if \"x\" in keys(d)\n        x = d[\"x\"]\n    end\n    if \"y\" in keys(d)\n        y = d[\"y\"]\n    end\n    return x, y\nend\nusing Test\n\n@testset begin\n\ncandidate = f;\n\t@test(candidate(Dict(\"x\" => 5, \"y\" => 12)) == (5, 12))\nend\n",
+        "id": 2,
+        "inputs": "candidate(Dict(\"x\" => 5, \"y\" => 12))",
+        "outputs": "(5, 12)"
+    }
+]

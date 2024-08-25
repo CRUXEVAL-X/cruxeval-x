@@ -1,0 +1,15 @@
+python dataset_build/7_mutiturn_repair.py \
+    --langs "['java', 'cpp', 'cs', 'd', 'go', 'jl', 'js', 'lua', 'php', 'pl', 'py', 'r', 'rb', 'rkt', 'rs', 'scala', 'sh', 'swift', 'ts']" \
+    --tmp 0 \
+    --api_key your api key \
+    --base_url your base url \
+    --model_name your model name \
+    --tot_data_num 800 \
+    --tests_dir ./datasets/cruxeval_preprocessed \
+    --right_dir ./datasets/cruxeval_iterated_repaired \
+    --example_tests_dir ./datasets/examples_preprocessed \
+    --example_right_dir ./datasets/examples \
+    --python_dir ./datasets/cruxeval \
+    --error_num 2 \
+    --repair_num 3 \
+    --output_dir ./datasets/cruxeval_final \

@@ -1,0 +1,20 @@
+[
+    {
+        "code": "\n#lang racket\n\n(define (f my_list)\n  (define count 0)\n  (for ([i my_list])\n    (when (even? (string-length i))\n      (set! count (+ count 1))))\n  count)\n(require rackunit)\n\n(define (test-humaneval) \n\n  (let (( candidate f))\n    (check-within (candidate (list \"mq\" \"px\" \"zy\")) 3 0.001)\n))\n\n(test-humaneval)",
+        "id": 0,
+        "inputs": "(candidate (list \"mq\" \"px\" \"zy\"))",
+        "outputs": "3"
+    },
+    {
+        "code": "\n#lang racket\n\n(define (f s1 s2)\n  (string-append s1 s2))\n(require rackunit)\n\n(define (test-humaneval) \n\n  (let (( candidate f))\n    (check-within (candidate \"ba\" \"nana\") \"banana\" 0.001)\n))\n\n(test-humaneval)",
+        "id": 1,
+        "inputs": "(candidate \"ba\" \"nana\")",
+        "outputs": "\"banana\""
+    },
+    {
+        "code": "\n#lang racket\n\n(define (f d)\n  (define x (hash-ref d \"x\" #f))\n  (define y (hash-ref d \"y\" #f))\n  (list x y))\n(require rackunit)\n\n(define (test-humaneval) \n\n  (let (( candidate f))\n    (check-within (candidate #hash((\"x\" .  5) (\"y\" .  12))) (list 5 12) 0.001)\n))\n\n(test-humaneval)",
+        "id": 2,
+        "inputs": "(candidate #hash((\"x\" .  5) (\"y\" .  12)))",
+        "outputs": "(list 5 12)"
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "code": "\n\n/// \nfunc f(my_list: [String]) -> Int {\n    var count = 0\n    for i in my_list {\n        if i.count % 2 == 0 {\n            count += 1\n        }\n    }\n    return count\n}\n\n\nfunc ==(left: [(Int, Int)], right: [(Int, Int)]) -> Bool {\n    if left.count != right.count {\n        return false\n    }\n    for (l, r) in zip(left, right) {\n        if l != r {\n            return false\n        }\n    }\n    return true\n}\n            \nassert(f(my_list: [\"mq\", \"px\", \"zy\"]) == 3)",
+        "id": 0,
+        "inputs": "f(my_list: [\"mq\", \"px\", \"zy\"])",
+        "outputs": "3"
+    },
+    {
+        "code": "\n\n/// \nfunc f(s1: String, s2: String) -> String {\n    return s1 + s2\n}\n\n\nfunc ==(left: [(Int, Int)], right: [(Int, Int)]) -> Bool {\n    if left.count != right.count {\n        return false\n    }\n    for (l, r) in zip(left, right) {\n        if l != r {\n            return false\n        }\n    }\n    return true\n}\n            \nassert(f(s1: \"ba\", s2: \"nana\") == \"banana\")",
+        "id": 1,
+        "inputs": "f(s1: \"ba\", s2: \"nana\")",
+        "outputs": "\"banana\""
+    },
+    {
+        "code": "\nfunc f(d: [String : Int]) -> (Int, Int) {\n    var x = 0\n    var y = 0\n    \n    if let xValue = d[\"x\"] {\n        x = xValue\n    }\n    \n    if let yValue = d[\"y\"] {\n        y = yValue\n    }\n    \n    return (x, y)\n}\n\n\nfunc ==(left: [(Int, Int)], right: [(Int, Int)]) -> Bool {\n    if left.count != right.count {\n        return false\n    }\n    for (l, r) in zip(left, right) {\n        if l != r {\n            return false\n        }\n    }\n    return true\n}\n            \nassert(f(d: [\"x\" : 5, \"y\" : 12]) == (5, 12))",
+        "id": 2,
+        "inputs": "f(d: [\"x\" : 5, \"y\" : 12])",
+        "outputs": "(5, 12)"
+    }
+]

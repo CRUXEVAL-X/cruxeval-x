@@ -1,0 +1,20 @@
+[
+    {
+        "code": "\nfunction f(my_list: string[]): number {\n    let count = 0;\n    for(let i of my_list) {\n        if (i.length % 2 === 0) {\n            count += 1;\n        }\n    }\n    return count;\n}\ndeclare var require: any;\nconst assert = require('node:assert');\n\n\nfunction test() {\n  let candidate = f;\n  assert.deepEqual(candidate([\"mq\", \"px\", \"zy\"]),3);\n}\n\ntest();",
+        "id": 0,
+        "inputs": "candidate([\"mq\", \"px\", \"zy\"])",
+        "outputs": "3"
+    },
+    {
+        "code": "\nfunction f(s1: string, s2: string): string {\n    return s1 + s2;\n}\ndeclare var require: any;\nconst assert = require('node:assert');\n\n\nfunction test() {\n  let candidate = f;\n  assert.deepEqual(candidate(\"ba\", \"nana\"),\"banana\");\n}\n\ntest();",
+        "id": 1,
+        "inputs": "candidate(\"ba\", \"nana\")",
+        "outputs": "\"banana\""
+    },
+    {
+        "code": "\nfunction f(d: {[key: string]: number}): [number, number] {\n    let x: number;\n    let y: number;\n    if ('x' in d) {\n        x = d['x'];\n    }\n    if ('y' in d) {\n        y = d['y'];\n    }\n    return [x, y];\n}\n\ndeclare var require: any;\nconst assert = require('node:assert');\n\n\nfunction test() {\n  let candidate = f;\n  assert.deepEqual(candidate({\"x\": 5, \"y\": 12}),[5, 12]);\n}\n\ntest();",
+        "id": 2,
+        "inputs": "candidate({\"x\": 5, \"y\": 12})",
+        "outputs": "[5, 12]"
+    }
+]

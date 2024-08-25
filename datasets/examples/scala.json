@@ -1,0 +1,20 @@
+[
+    {
+        "code": "\nimport scala.math._\nimport scala.collection.mutable._\nobject Problem {\n    def f(my_list : List[String]) : Long = {\n        var count: Long = 0\n        for (i <- my_list) {\n            if (i.length % 2 == 0) {\n                count += 1\n            }\n        }\n        count\n    }\n    def main(args: Array[String]) = {\n    assert(f((List[String](\"mq\", \"px\", \"zy\"))) == (3l));\n    }\n\n}\n",
+        "id": 0,
+        "inputs": "f((List[String](\"mq\", \"px\", \"zy\")))",
+        "outputs": "(3l)"
+    },
+    {
+        "code": "\nimport scala.math._\nimport scala.collection.mutable._\nobject Problem {\n    def f(s1 : String, s2 : String) : String = {\n        s1 + s2\n    }\n    def main(args: Array[String]) = {\n    assert(f((\"ba\"), (\"nana\")).equals((\"banana\")));\n    }\n\n}\n",
+        "id": 1,
+        "inputs": "f((\"ba\"), (\"nana\"))",
+        "outputs": "(\"banana\")"
+    },
+    {
+        "code": "\nimport scala.math._\nimport scala.collection.mutable._\nobject Problem {\n    def f(d : Map[String,Long]) : Tuple2[Long, Long] = {\n        var x, y : Long = 0\n        if (d.contains(\"x\")) {\n            x = d(\"x\")\n        }\n        if (d.contains(\"y\")) {\n            y = d(\"y\")\n        }\n        (x, y)\n    }\n    def main(args: Array[String]) = {\n    assert(f((Map[String,Long](\"x\" -> 5l, \"y\" -> 12l))).equals(((5l, 12l))));\n    }\n\n}\n",
+        "id": 2,
+        "inputs": "f((Map[String,Long](\"x\" -> 5l, \"y\" -> 12l)))",
+        "outputs": "((5l, 12l))"
+    }
+]

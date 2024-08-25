@@ -1,0 +1,20 @@
+[
+    {
+        "code": "\nfn f(my_list: Vec<String>) -> isize {\n    let mut count = 0;\n    for i in my_list {\n        if i.len() % 2 == 0 {\n            count += 1;\n        }\n    }\n    count\n}\n\nfn main() {\n    let candidate = f;\n    assert_eq!(candidate(vec![String::from(\"mq\"), String::from(\"px\"), String::from(\"zy\")]), 3);\n}\n",
+        "id": 0,
+        "inputs": "candidate(vec![String::from(\"mq\"), String::from(\"px\"), String::from(\"zy\")])",
+        "outputs": "3"
+    },
+    {
+        "code": "\nfn f(s1: String, s2: String) -> String {\n    format!(\"{}{}\", s1, s2)\n}\n\nfn main() {\n    let candidate = f;\n    assert_eq!(candidate(String::from(\"ba\"), String::from(\"nana\")), String::from(\"banana\"));\n}\n",
+        "id": 1,
+        "inputs": "candidate(String::from(\"ba\"), String::from(\"nana\"))",
+        "outputs": "String::from(\"banana\")"
+    },
+    {
+        "code": "\nuse std::collections::HashMap;\n\nfn f(d: HashMap<String, isize>) -> (isize, isize) {\n    let x = *d.get(\"x\").unwrap_or(&0);\n    let y = *d.get(\"y\").unwrap_or(&0);\n    (x, y)\n}\n\nfn main() {\n    let candidate = f;\n    assert_eq!(candidate(HashMap::from([(String::from(\"x\"), 5), (String::from(\"y\"), 12)])), (5, 12));\n}\n",
+        "id": 2,
+        "inputs": "candidate(HashMap::from([(String::from(\"x\"), 5), (String::from(\"y\"), 12)]))",
+        "outputs": "(5, 12)"
+    }
+]

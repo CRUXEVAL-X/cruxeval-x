@@ -1,0 +1,20 @@
+[
+    {
+        "code": "\nf <- function(my_list) {    count <- 0\n    for (i in my_list) {\n        if (nchar(i) %% 2 == 0) {\n            count <- count + 1\n        }\n    }\n    return(count)\n}\ntest_humaneval <- function() {\n    candidate <- f\n    stopifnot(isTRUE(all.equal(candidate(c('mq', 'px', 'zy')), 3)))\n}\ntest_humaneval()",
+        "id": 0,
+        "inputs": "candidate(c('mq', 'px', 'zy'))",
+        "outputs": "3"
+    },
+    {
+        "code": "\nf <- function(s1, s2) {\n    return(paste0(s1, s2))\n}\ntest_humaneval <- function() {\n    candidate <- f\n    stopifnot(isTRUE(all.equal(candidate('ba', 'nana'), 'banana')))\n}\ntest_humaneval()",
+        "id": 1,
+        "inputs": "candidate('ba', 'nana')",
+        "outputs": "'banana'"
+    },
+    {
+        "code": "\nf <- function(d) {    if ('x' %in% names(d)) {\n        x <- d[['x']]\n    }\n    if ('y' %in% names(d)) {\n        y <- d[['y']]\n    }\n    return(c(x, y))\n}\ntest_humaneval <- function() {\n    candidate <- f\n    stopifnot(isTRUE(all.equal(candidate(list('x' = 5, 'y' = 12)), c(5, 12))))\n}\ntest_humaneval()",
+        "id": 2,
+        "inputs": "candidate(list('x' = 5, 'y' = 12))",
+        "outputs": "c(5, 12)"
+    }
+]

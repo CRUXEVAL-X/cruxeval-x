@@ -1,0 +1,11 @@
+python dataset_build/4_repair_generating.py \
+    --langs "['java', 'cpp', 'cs', 'd', 'go', 'jl', 'js', 'lua', 'php', 'pl', 'py', 'r', 'rb', 'rkt', 'rs', 'scala', 'sh', 'swift', 'ts']" \
+    --tmp 0 \
+    --api_key your api key \
+    --base_url your base url \
+    --model_name your model name \
+    --tests_dir ./datasets/cruxeval_preprocessed \
+    --python_dir ./datasets/cruxeval \
+    --example_dir ./MutiPL-E/evaluation/test_inputs \
+    --pre_dir ./datasets/cruxeval_generated \
+    --output_dir ./datasets/cruxeval_generated \

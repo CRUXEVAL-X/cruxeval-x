@@ -1,0 +1,20 @@
+[
+    {
+        "code": "\nimport std.math;\nimport std.typecons;\n\nlong f(string[] my_list) \n{\n    long count = 0;\n    foreach (i; my_list)\n    {\n        if (i.length % 2 == 0)\n        {\n            count++;\n        }\n    }\n    return count;\n}\nunittest\n{\n    alias candidate = f;\n\n    assert(candidate([\"mq\", \"px\", \"zy\"]) == 3L);\n}\nvoid main(){}",
+        "id": 0,
+        "inputs": "candidate([\"mq\", \"px\", \"zy\"])",
+        "outputs": "3L"
+    },
+    {
+        "code": "\nimport std.math;\nimport std.conv;\n\nstring f(string s1, string s2) \n{\n    return s1 ~ s2;\n}\nunittest\n{\n    alias candidate = f;\n\n    assert(candidate(\"ba\", \"nana\") == \"banana\");\n}\nvoid main(){}",
+        "id": 1,
+        "inputs": "candidate(\"ba\", \"nana\")",
+        "outputs": "\"banana\""
+    },
+    {
+        "code": "\nimport std.math;\nimport std.typecons;\nimport std.algorithm;\nimport std.array;\nimport std.typecons;\n\nTuple!(long, long) f(Nullable!(long[string]) d) \n{\n    long x = 0, y = 0;\n    if (!d.isNull) {\n        auto dict = d.get();\n        foreach (key, value; dict) {\n            if (key == \"x\") {\n                x = value;\n            }\n            if (key == \"y\") {\n                y = value;\n            }\n        }\n    }\n    return tuple(x, y);\n}\nunittest\n{\n    alias candidate = f;\n\n    assert(candidate([\"x\": 5L, \"y\": 12L].nullable) == tuple(5L, 12L));\n}\nvoid main(){}",
+        "id": 2,
+        "inputs": "candidate([\"x\": 5L, \"y\": 12L].nullable)",
+        "outputs": "tuple(5L, 12L)"
+    }
+]

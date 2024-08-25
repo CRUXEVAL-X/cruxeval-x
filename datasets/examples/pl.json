@@ -1,0 +1,20 @@
+[
+    {
+        "code": "\nsub f {\n    my($my_list) = @_;\n    my $count = 0;\n    foreach my $i (@$my_list) {\n        if (length($i) % 2 == 0) {\n            $count += 1;\n        }\n    }\n    return $count;\n}\nuse Test::Deep;\n\n\nsub testhumaneval {\n    my $candidate = \\&f;\n        if(eq_deeply($candidate->([\"mq\", \"px\", \"zy\"]),3)) {\n        print \"ok!\" }else{\n        exit 1;\n        }\n}\n\ntesthumaneval();",
+        "id": 0,
+        "inputs": "$candidate->([\"mq\", \"px\", \"zy\"])",
+        "outputs": "3"
+    },
+    {
+        "code": "\n# \nsub f {\n    my($s1, $s2) = @_;\n    return $s1 . $s2;\n}\nuse Test::Deep;\n\n\nsub testhumaneval {\n    my $candidate = \\&f;\n        if(eq_deeply($candidate->(\"ba\", \"nana\"),\"banana\")) {\n        print \"ok!\" }else{\n        exit 1;\n        }\n}\n\ntesthumaneval();",
+        "id": 1,
+        "inputs": "$candidate->(\"ba\", \"nana\")",
+        "outputs": "\"banana\""
+    },
+    {
+        "code": "\n# \nsub f {\n    my ($d) = @_;\n    my $x;\n    my $y;\n    if (exists $d->{'x'}) {\n        $x = $d->{'x'};\n    }\n    if (exists $d->{'y'}) {\n        $y = $d->{'y'};\n    }\n    return [$x, $y];\n}\n\nuse Test::Deep;\n\nsub testhumaneval {\n    my $candidate = \\&f;\n    if (eq_deeply($candidate->({\"x\" => 5, \"y\" => 12}), [5, 12])) {\n        print \"ok!\n\";\n    } else {\n        exit 1;\n    }\n}\n\ntesthumaneval();",
+        "id": 2,
+        "inputs": "$candidate->({\"x\" => 5, \"y\" => 12})",
+        "outputs": "[5, 12]"
+    }
+]

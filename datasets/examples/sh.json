@@ -1,0 +1,20 @@
+[
+    {
+        "code": "\n#!/bin/bash\n# $1 is a space-separated list\nf() {\n    count=0\n    for i in $1; do\n        if [ $(( ${#i} % 2 )) -eq 0 ]; then\n            count=$((count+1))\n        fi\n    done\n    echo $count\n}\n\ncandidate() {\n    f \"$@\"\n}\n\nset -e\nrun_test() {\n    [[ $(candidate \"mq px zy\") = \"3\" ]]\n}\n\nrun_test",
+        "id": 0,
+        "inputs": "$(candidate \"mq px zy\")",
+        "outputs": "\"3\""
+    },
+    {
+        "code": "\n#!/bin/bash\n# $1 is a string\n# $2 is a string\nf() {\n    echo \"$1$2\"\n}\n\ncandidate() {\n    f \"$@\"\n}\n\nset -e\nrun_test() {\n    [[ $(candidate \"ba\" \"nana\") = \"banana\" ]]\n}\n\nrun_test",
+        "id": 1,
+        "inputs": "$(candidate \"ba\" \"nana\")",
+        "outputs": "\"banana\""
+    },
+    {
+        "code": "#!/bin/bash\n# $1 is a two column CSV in key,value order\nf() {\n    local x y\n    while IFS=, read -r key value; do\n        if [ \"$key\" = \"x\" ]; then\n            x=$value\n        elif [ \"$key\" = \"y\" ]; then\n            y=$value\n        fi\n    done < <(echo -e \"$1\")\n    echo \"$x $y\"\n}\n\ncandidate() {\n    f \"$@\"\n}\n\nset -e\nrun_test() {\n    [[ $(candidate \"x,5\ny,12\") = \"5 12\" ]]\n}\n\nrun_test\n",
+        "id": 2,
+        "inputs": "$(candidate \"x,5\ny,12\")",
+        "outputs": "\"5 12\""
+    }
+]

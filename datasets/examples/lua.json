@@ -1,0 +1,20 @@
+[
+    {
+        "code": "\nlocal function f(my_list)\n    local count = 0\n    for i, v in ipairs(my_list) do\n        if #v % 2 == 0 then\n            count = count + 1\n        end\n    end\n    return count\nend\nlu = require('luaunit')\n\nfunction test_humaneval()\nlocal candidate = f\n    lu.assertEquals(candidate({'mq', 'px', 'zy'}), 3)\nend\n\nos.exit(lu.LuaUnit.run())",
+        "id": 0,
+        "inputs": "candidate({'mq', 'px', 'zy'})",
+        "outputs": "3"
+    },
+    {
+        "code": "\nlocal function f(s1, s2)\n    return s1..s2\nend\nlu = require('luaunit')\n\nfunction test_humaneval()\nlocal candidate = f\n    lu.assertEquals(candidate('ba', 'nana'), 'banana')\nend\n\nos.exit(lu.LuaUnit.run())",
+        "id": 1,
+        "inputs": "candidate('ba', 'nana')",
+        "outputs": "'banana'"
+    },
+    {
+        "code":"\nlocal function f(d)\n    local result = {}\n    if d['x'] then\n        table.insert(result, d['x'])\n    end\n    if d['y'] then\n        table.insert(result, d['y'])\n    end\n    return result\nend\n\nlu = require('luaunit')\n\nfunction test_humaneval()\n    local candidate = f\n    lu.assertEquals(candidate({['x'] = 5, ['y'] = 12}), {5, 12})\nend\n\nos.exit(lu.LuaUnit.run())",
+        "id": 2,
+        "inputs": "candidate({['x'] = 5, ['y'] = 12})",
+        "outputs": "{5, 12}"
+    }
+]

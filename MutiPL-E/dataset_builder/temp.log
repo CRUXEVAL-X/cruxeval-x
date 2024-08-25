@@ -1,0 +1,2110 @@
+0
+* {'output': [(1, 3), (1, 2), (1, 1)]}
+1
+* {'output': {1: None, 2: None}}
+2
+* {'output': 'example'}
+3
+* {'output': 'exampleexample'}
+4
+* {'output': ' abc'}
+5
+* {'output': (0, 'exampleexampleexampleexampleexampleexampleexample')}
+6
+* {'output': [('b', 2)]}
+7
+* {'output': []}
+8
+* {'output': 'example'}
+9
+* {'output': False}
+10
+* {'output': ''}
+11
+* {'output': {'a': ['b', 'c', 'b']}}
+12
+* {'output': 'example'}
+13
+* {'output': 3}
+14
+* {'output': 'elpmaxe'}
+15
+* {'output': 'EXAMPLE'}
+16
+* {'output': ''}
+17
+* {'output': -1}
+18
+* {'output': [1, 2, 3]}
+19
+* {'output': 'example'}
+20
+* {'output': 'elpmaxe'}
+21
+* {'output': [1, 2, 3, 3]}
+22
+* {'output': 3}
+23
+* {'output': '-'}
+24
+* {'output': [1, 2]}
+25
+* {'output': {'a': 1}}
+26
+* {'output': 1}
+27
+* {'output': True}
+28
+* {'output': True}
+29
+* None
+def f(text: str) -> str:
+    """"""
+    ### Canonical solution below ###
+    nums = list(filter(str.isnumeric, text))
+    assert len(nums) > 0
+    return ''.join(nums)
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate('-123   \t+314') == '123314'
+
+def test_check():
+    check(f)
+30
+* {'output': ['a', 'b', 'c']}
+31
+* {'output': 0}
+32
+* {'output': '*;*'}
+33
+* {'output': '{1:[1],2:[1,2],3:[1,2,3]}'}
+34
+* {'output': [1, 2]}
+35
+* {'output': []}
+36
+* {'output': ''}
+37
+* {'output': ['example', 'xample', 'ample', 'mple', 'ple', 'le', 'e']}
+38
+* {'output': 'Example'}
+39
+* {'output': 2}
+40
+* {'output': 'example#'}
+41
+* {'output': [1, 2, -2, 0, 2, 1, -1, -3, 3]}
+42
+* {'output': []}
+43
+* {'output': -1}
+44
+* {'output': '*+++e+x+a+m+p+l+e'}
+45
+* {'output': 0}
+46
+* {'output': 'aexamplebexamplec'}
+47
+* {'output': False}
+48
+* {'output': ''}
+49
+* {'output': ''}
+50
+* {'output': [1]}
+51
+* {'output': 2}
+52
+* {'output': 'example'}
+53
+* {'output': [2, 1, 1, 1, 1, 1]}
+54
+* {'output': -1}
+55
+* {'output': [3, 2, 1]}
+56
+* {'output': True}
+57
+* {'output': 3}
+58
+* {'output': [1, 2, 3, 1, 2, 1]}
+59
+* {'output': 'example'}
+60
+* {'output': 'E'}
+61
+* {'output': 'example'}
+62
+* {'output': ('b',)}
+63
+* {'output': 'example'}
+64
+* {'output': ' example '}
+65
+* {'output': 9}
+66
+* {'output': ''}
+67
+* {'output': '3,3,3'}
+68
+* {'output': ''}
+69
+* {'output': 'Name unknown'}
+70
+* {'output': 14}
+71
+* {'output': {1: 2, 2: 3, 4: 3}}
+72
+* {'output': False}
+73
+* {'output': (0, 0)}
+74
+* {'output': [1, 2, 3, 3]}
+75
+* {'output': 7}
+76
+* {'output': [1, 2, 3]}
+77
+* {'output': 'example'}
+78
+* {'output': 'exa'}
+79
+* {'output': '1,2,3,4'}
+80
+* {'output': 'elpmaxe'}
+81
+* {'output': [('a', 'b')]}
+82
+* {'output': 'example'}
+83
+* {'output': '0:0'}
+84
+* {'output': 'exampleday'}
+85
+* {'output': [3, 4.5]}
+86
+* {'output': 3}
+87
+* {'output': '321'}
+88
+* {'output': ''}
+89
+* {'output': None}
+90
+* {'output': [[1, 2], [3, 4]]}
+91
+* {'output': ['e', 'x', 'a', 'm', 'p', 'l']}
+92
+* {'output': True}
+93
+* {'output': 'example!!!!!!!!!'}
+94
+* {'output': {'a': 1, 'b': 2}}
+95
+* {'output': {'b': 'a'}}
+96
+* {'output': True}
+97
+* {'output': True}
+98
+* {'output': 0}
+99
+* {'output': '___'}
+100
+* {'output': {'b': 'c'}}
+101
+* {'output': [1, 2, 3, 3]}
+102
+* {'output': [2, 1, 0]}
+103
+* {'output': 'example'}
+104
+* {'output': {'e': 1, 'x': 1, 'a': 1, 'm': 1, 'p': 1, 'l': 1}}
+105
+* {'output': 'Example'}
+106
+* {'output': [2, 2, 2, 1, 2, 3]}
+107
+* {'output': 'EXAMPLE'}
+108
+* {'output': 0}
+109
+* {'output': [1, 2, 3, 3]}
+110
+* {'output': 8}
+111
+* {'output': (2, 1)}
+112
+* {'output': 'xml'}
+113
+* {'output': 'eXaMpLe'}
+114
+* {'output': ['', '']}
+115
+* {'output': "b'101; 120; 97; 109; 112; 108; 101; '"}
+116
+* {'output': {}}
+117
+* {'output': -1}
+118
+* {'output': ''}
+119
+* {'output': 'ExAmPlE'}
+120
+* {'output': {'b': ['a']}}
+121
+* {'output': 'none'}
+122
+* {'output': 'no'}
+123
+* {'output': [1, 2, 3]}
+124
+* {'output': 'example'}
+125
+* {'output': 'example'}
+126
+* {'output': '-example'}
+127
+* {'output': 1}
+128
+* {'output': 'eapexml'}
+129
+* {'output': [0]}
+130
+* {'output': 'a=b'}
+131
+* None
+def f(text: str) -> int:
+    """"""
+    ### Canonical solution below ###
+    a = len(text)
+    count = 0
+    while text:
+        if text.startswith('a'):
+            count += text.find(' ')
+        else:
+            count += text.find('\n')
+        text = text[text.find('\n')+1:text.find('\n')+a+1]
+    return count
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate("a\nkgf\nasd\n") == 1
+
+def test_check():
+    check(f)
+132
+* {'output': 'exampleexample'}
+133
+* {'output': []}
+134
+* {'output': '3'}
+135
+* {'output': ['Russia', 'Kazakhstan']}
+136
+* {'output': 'example'}
+137
+* {'output': []}
+138
+* {'output': 'example'}
+139
+* {'output': 'no'}
+140
+* None
+def f(st: str) -> str:
+    """"""
+    ### Canonical solution below ###
+    if st.lower().rindex('h', st.lower().rindex('i')) >= st.lower().rindex('i'):
+        return 'Hey'
+    else:
+        return 'Hi'
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate('Hi there') == 'Hey'
+
+def test_check():
+    check(f)
+141
+* {'output': [1, 1, 1]}
+142
+* {'output': 'example'}
+143
+* {'output': True}
+144
+* {'output': [[1, 2], [3, 4]]}
+145
+* {'output': 1.0}
+146
+* {'output': [1, 2, 4, 5, 6, 7, 8, 9, 10]}
+147
+* {'output': [2, 3, 1]}
+148
+* {'output': 'xample-'}
+149
+* {'output': '1example2example3example4example'}
+150
+* {'output': [1, 2, 3]}
+151
+* {'output': 'example'}
+152
+* {'output': 0}
+153
+* {'output': False}
+154
+* {'output': 'example  example'}
+155
+* {'output': 'exa\nmpl\ne'}
+156
+* {'output': 'exa'}
+157
+* {'output': 0}
+158
+* {'output': [2, 2]}
+159
+* {'output': 'ELPMAXE'}
+160
+* {'output': {1: 2, 2: 3, 3: 4}}
+161
+* {'output': ''}
+162
+* {'output': 'EXAMPLE'}
+163
+* {'output': 'example'}
+164
+* {'output': [1, 2, 3]}
+165
+* {'output': True}
+166
+* {'output': {'a': {'b': ''}}}
+167
+* {'output': 'example'}
+168
+* {'output': 'exaaple'}
+169
+* {'output': '++++++example++++++'}
+170
+* {'output': 1}
+171
+* {'output': [2, 3]}
+172
+* {'output': [1, 2, 3]}
+173
+* {'output': [3, 2, 1]}
+174
+* {'output': [1, 3, 2]}
+175
+* {'output': 'example '}
+176
+* {'output': 'example'}
+177
+* {'output': 'eXaMpLe'}
+178
+* {'output': []}
+179
+* {'output': [3, 2, 1, 2, 3]}
+180
+* {'output': [-3, -2, -1, 0, 1, 2]}
+181
+* {'output': ['', 0]}
+182
+* {'output': [('a', 1), ('b', 2)]}
+183
+* {'output': ['example']}
+184
+* {'output': [1, 2, -1, 0, -3, -2]}
+185
+* {'output': [3, 2, 1]}
+186
+* {'output': 'example'}
+187
+* {'output': 4}
+188
+* {'output': ['a']}
+189
+* {'output': 'example'}
+190
+* {'output': 'example'}
+191
+* {'output': False}
+192
+* {'output': ''}
+193
+* {'output': 'example'}
+194
+* {'output': [[1, 2], [3, 4], []]}
+195
+* {'output': 'example  '}
+196
+* {'output': 'mixed'}
+197
+* {'output': '0 oC'}
+198
+* {'output': ''}
+199
+* None
+def f(s: str, char: str) -> str:
+    """"""
+    ### Canonical solution below ###
+    base = char * (str.count(char) + 1)
+    return str.removesuffix(base)
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate('mnmnj krupa...##!@#!@#$$@##', '@') == 'mnmnj krupa...##!@#!@#$$@##'
+
+def test_check():
+    check(f)
+200
+* {'output': 'elpmaxeexample'}
+201
+* {'output': ''}
+202
+* {'output': []}
+203
+* {'output': {}}
+204
+* {'output': ['e', 'x']}
+205
+* {'output': 'example'}
+206
+* {'output': 'example'}
+207
+* {'output': {'a': 1, 'b': 2}}
+208
+* {'output': ['a', 'b', 'c']}
+209
+* {'output': ''}
+210
+* {'output': 2}
+211
+* {'output': 2}
+212
+* {'output': [1, 2, 3]}
+213
+* {'output': 'example'}
+214
+* {'output': 1}
+215
+* {'output': 'xampl'}
+216
+* {'output': 0}
+217
+* {'output': 'ascii encoded is allowed for this language'}
+218
+* {'output': 'elpmaxeelpmaxe'}
+219
+* {'output': True}
+220
+* {'output': 'maxeelpm'}
+221
+* {'output': 'example'}
+222
+* {'output': 'example'}
+223
+* {'output': 2}
+224
+* {'output': {'c': 3, 'b': 3}}
+225
+* {'output': True}
+226
+* {'output': [1, 2, 3, 3]}
+227
+* {'output': 'Example'}
+228
+* {'output': 'example'}
+229
+* {'output': []}
+230
+* {'output': 'elpmaxe'}
+231
+* {'output': 2}
+232
+* {'output': 'eexampe'}
+233
+* {'output': [1, 2, 3]}
+234
+* {'output': 0}
+235
+* {'output': []}
+236
+* {'output': 'abb'}
+237
+* {'output': 'exampleexample'}
+238
+* {'output': [3, 4]}
+239
+* {'output': ''}
+240
+* {'output': '1.00'}
+241
+* None
+def f(postcode: str) -> str:
+    """"""
+    ### Canonical solution below ###
+    return postcode[postcode.index('C'):]
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate('ED20 CW') == 'CW'
+
+def test_check():
+    check(f)
+242
+* {'output': ':,."& /abc@_()-'}
+243
+* {'output': True}
+244
+* {'output': '              exampleexampleexampleexampleexampleexampleexamp'}
+245
+* {'output': []}
+246
+* {'output': 0}
+247
+* {'output': 'yes'}
+248
+* {'output': [3, 2, 1, 3, 2, 1]}
+249
+* {'output': {'e': 4, 'x': 1, 'a': 1, 'm': 1, 'p': 1, 'l': 1}}
+250
+* {'output': 'examplexmlxll'}
+251
+* {'output': 'a;b;+;3;5;3. c;d;+;3;5;3'}
+252
+* {'output': 'example'}
+253
+* {'output': ''}
+254
+* {'output': 'example'}
+255
+* {'output': 'ple'}
+256
+* {'output': 1}
+257
+* {'output': [['a'], ['b'], ['c']]}
+258
+* {'output': [1, 3, 2, 3]}
+259
+* {'output': '-'}
+260
+* {'output': [1, 2, 3]}
+261
+* {'output': ([], [3])}
+262
+* {'output': 'EDC'}
+263
+* {'output': ['b', 'b', 'd']}
+264
+* {'output': 'AxAmplA'}
+265
+* {'output': {1: 2, 2: 3}}
+266
+* {'output': [1, 1, 2, 3, 3]}
+267
+* {'output': 'example'}
+268
+* {'output': None}
+269
+* {'output': ['0', '0', 3]}
+270
+* None
+from typing import Dict
+
+def f(dic: Dict[int,int]) -> Dict[int,int]:
+    """"""
+    ### Canonical solution below ###
+    d = {}
+    for key in dic:
+        d[key] = dic.popitem(last = False)[1]
+    return d
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate({}) == {}
+
+def test_check():
+    check(f)
+271
+* {'output': 'xample'}
+272
+* {'output': [1, 2, 3, 1, 2, 3, 1, 3, 2, 1, 2, 2]}
+273
+* {'output': 'example'}
+274
+* {'output': 2}
+275
+* {'output': {'a': 1, 'b': 2}}
+276
+* {'output': [3, 2, 1]}
+277
+* {'output': [3, 2, 1]}
+278
+* {'output': {1: [1], 2: [1, 2, 3], 3: [1, 2, 3]}}
+279
+* None
+def f(text: str) -> str:
+    """"""
+    ### Canonical solution below ###
+    ans = ''
+    while text != '':
+        x, sep, text = text.partition('(')
+        ans = x + sep.replace('(', '|') + ans
+        ans = ans + text[0] + ans
+        text = text[1:]
+    return ans
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate("") == ''
+
+def test_check():
+    check(f)
+280
+* {'output': 'example'}
+281
+* {'output': {'a': 'b', 3: 3, 'message': 'xcrWt'}}
+282
+* {'output': 1}
+283
+* {'output': 'a'}
+284
+* {'output': ''}
+285
+* {'output': 1}
+286
+* {'output': 'no'}
+287
+* {'output': 'EXAMPLE'}
+288
+* {'output': [(1, 2), (2, 3), (3, 4)]}
+289
+* {'output': "example: b'example'"}
+290
+* {'output': ''}
+291
+* {'output': {'a': 'a'}}
+292
+* {'output': '*******'}
+293
+* {'output': 'no'}
+294
+* {'output': 'example'}
+295
+* None
+from typing import List
+
+def f(fruits: List[str]) -> List[str]:
+    """"""
+    ### Canonical solution below ###
+    if fruits[-1] == fruits[0]:
+        return 'no'
+    else:
+        fruits.pop(0)
+        fruits.pop()
+        fruits.pop(0)
+        fruits.pop()
+        return fruits
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate(['apple', 'apple', 'pear', 'banana', 'pear', 'orange', 'orange']) == ['pear', 'banana', 'pear']
+
+def test_check():
+    check(f)
+296
+* {'output': 'example'}
+297
+* {'output': 'Half Life'}
+298
+* {'output': 'EXAMPLE'}
+299
+* {'output': 'example'}
+300
+* {'output': [1, 2, 3]}
+301
+* {'output': [1, 2, 3, 2, 2, 2, 2]}
+302
+* {'output': 'example'}
+303
+* {'output': 'example'}
+304
+* {'output': {3: 4, 2: 3}}
+305
+* {'output': 'exaple'}
+306
+* {'output': [1]}
+307
+* {'output': 'ex|||||ample'}
+308
+* {'output': {'a': 1, 'b': 1, 'c': 1}}
+309
+* {'output': 'exampleexampl'}
+310
+* {'output': 'abc'}
+311
+* {'output': 'no'}
+312
+* None
+def f(s: str) -> str:
+    """"""
+    ### Canonical solution below ###
+    if str.isalnum():
+        return "True"
+    return "False"
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate('777') == 'True'
+
+def test_check():
+    check(f)
+313
+* {'output': ''}
+314
+* {'output': ', 0'}
+315
+* {'output': 'examp,e'}
+316
+* {'output': '| example |'}
+317
+* {'output': 'example'}
+318
+* {'output': 0}
+319
+* {'output': 1}
+320
+* {'output': 'EXAMPLE'}
+321
+* {'output': {'a': 2, 'b': 4}}
+322
+* {'output': ['c']}
+323
+* {'output': 1}
+324
+* {'output': [3, 3, 2, 1, 3]}
+325
+* {'output': False}
+326
+* {'output': 0}
+327
+* {'output': [-3, 2, -1]}
+328
+* {'output': [1, 2, 3]}
+329
+* {'output': False}
+330
+* {'output': '       '}
+331
+* {'output': -1}
+332
+* {'output': [2, 3]}
+333
+* {'output': 1}
+334
+* {'output': 'aexamplebexamplec'}
+335
+* {'output': 'example'}
+336
+* {'output': 'example'}
+337
+* {'output': 'EXAMPLE'}
+338
+* {'output': {1: 'a', 2: 'b'}}
+339
+* {'output': 1}
+340
+* {'output': 'aeelmpx'}
+341
+* {'output': {1: 2, 2: 3, 3: 4}}
+342
+* {'output': False}
+343
+* {'output': [[1, 2], 3, [1, 2], 3]}
+344
+* None
+from typing import List, Callable
+
+def f(lst: List[int]) -> List[int]:
+    """"""
+    ### Canonical solution below ###
+    operation = lambda x: x.reverse()
+    new_list = list[:]
+    new_list.sort()
+    operation(new_list)
+    return list
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate([6, 4, 2, 8, 15]) == [6, 4, 2, 8, 15]
+
+def test_check():
+    check(f)
+345
+* {'output': ('example', 'example')}
+346
+* {'output': False}
+347
+* {'output': 'eeeeeeeexample'}
+348
+* {'output': {1: 1, 2: None, 3: 4}}
+349
+* {'output': {'a': 1, 'b': 2, '1049': 55}}
+350
+* {'output': [1, 2]}
+351
+* {'output': 'example'}
+352
+* {'output': 2}
+353
+* {'output': 1}
+354
+* {'output': 'example'}
+355
+* {'output': ''}
+356
+* {'output': [3, 2, 1, 3, 2, 1, 3, 2, 1]}
+357
+* {'output': 'elpmaxe'}
+358
+* {'output': 'example'}
+359
+* {'output': ['a', 'b', 'c']}
+360
+* {'output': 'xample'}
+361
+* {'output': 0}
+362
+* {'output': 'xample'}
+363
+* {'output': [3, 2, 1]}
+364
+* None
+from typing import List, Callable, Union
+
+def f(nums: List[int]) -> Union[List[List[int, bool]], str]:
+    """"""
+    ### Canonical solution below ###
+    verdict = lambda x: x < 2
+    res = [x for x in nums if x != 0]
+    result = [[x, verdict(x)] for x in res]
+    if result:
+        return result
+    return 'error - no numbers or all zeros!'
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate([0, 3, 0, 1]) == [[3, False], [1, True]]
+
+def test_check():
+    check(f)
+365
+* {'output': 'example'}
+366
+* {'output': ''}
+367
+* {'output': [1, 2]}
+368
+* {'output': 'example example example'}
+369
+* {'output': 'tuple'}
+370
+* {'output': False}
+371
+* {'output': 2}
+372
+* {'output': ['a,', 'b,', 'c,']}
+373
+* {'output': [1, 2, 3]}
+374
+* {'output': []}
+375
+* {'output': 'eexamplexexampleample'}
+376
+* {'output': 'no'}
+377
+* {'output': 'example'}
+378
+* {'output': 'No such key!'}
+379
+* {'output': [1, 2, 3]}
+380
+* {'output': ''}
+381
+* {'output': 'example'}
+382
+* {'output': "(2, 'b') (1, 'a')"}
+383
+* {'output': 'example'}
+384
+* {'output': ''}
+385
+* {'output': []}
+386
+* None
+from typing import Dict
+
+def f(concat: str, di: Dict[str, str]) -> str:
+    """"""
+    ### Canonical solution below ###
+    count = len(di)
+    for i in range(count):
+        if di[str(i)] in concat:
+            di.pop(str(i))
+    return "Done!"
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate('mid', {'0':'q','1':'f','2':'w','3':'i'}) == 'Done!'
+
+def test_check():
+    check(f)
+387
+* {'output': [1, 2, 3, 3]}
+388
+* {'output': ''}
+389
+* {'output': ['a', 'b', 'c', 'e', 'x', 'a', 'm', 'p', 'l', 'e']}
+390
+* {'output': None}
+391
+* {'output': ['c', '+', '+', '+', '+']}
+392
+* {'output': 'example'}
+393
+* {'output': 'a---x---e---l---p---m'}
+394
+* {'output': -1}
+395
+* {'output': -1}
+396
+* None
+from typing import Dict
+
+def f(ets: Dict[int, int]) -> Dict[int, int]:
+    """"""
+    ### Canonical solution below ###
+    while ets:
+        k, v = ets.popitem()
+        ets[k] = v**2
+    return ets
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate({}) == {}
+
+def test_check():
+    check(f)
+397
+* {'output': {'a': 0, 1: 0, 'b': 0}}
+398
+* {'output': {'a': 1, 'b': 2, 1: ['a'], 2: ['b']}}
+399
+* {'output': 'example'}
+400
+* {'output': 'example'}
+401
+* {'output': ''}
+402
+* {'output': {}}
+403
+* {'output': 1}
+404
+* {'output': 3}
+405
+* None
+from typing import List
+
+def f(xs: List[int]) -> List[int]:
+    """"""
+    ### Canonical solution below ###
+    new_x = xs[0] - 1
+    xs.pop(0)
+    while(new_x <= xs[0]):
+        xs.pop(0)
+        new_x -= 1
+    xs.insert(0, new_x)
+    return xs
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate([6, 3, 4, 1, 2, 3, 5]) == [5, 3, 4, 1, 2, 3, 5]
+
+def test_check():
+    check(f)
+406
+* {'output': False}
+407
+* {'output': 0}
+408
+* {'output': [3, 2, 1]}
+409
+* {'output': 'xamplE'}
+410
+* {'output': [1, 1, 1, 1, 2, 3]}
+411
+* {'output': True}
+412
+* {'output': 1}
+413
+* {'output': 'mpleale'}
+414
+* {'output': {'a': ['B', 'C']}}
+415
+* {'output': {1: 2, 3: 4}}
+416
+* {'output': 'example'}
+417
+* {'output': [2, 3]}
+418
+* {'output': 'example'}
+419
+* {'output': ''}
+420
+* {'output': True}
+421
+* None
+def f(s: str, n: int) -> str:
+    """"""
+    ### Canonical solution below ###
+    if len(str) < n:
+        return str
+    else:
+        return str.removeprefix(str[:n])
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate("try.", 5) == 'try.'
+
+def test_check():
+    check(f)
+422
+* {'output': [9, 4, 1]}
+423
+* {'output': [1, 2]}
+424
+* {'output': 'xample'}
+425
+* {'output': ['', '', 'example']}
+426
+* {'output': [1, 2, 3, 3]}
+427
+* {'output': ''}
+428
+* {'output': [1, 2, 3, 2, 6]}
+429
+* {'output': [('a', 'b')]}
+430
+* {'output': [1, 2, 3, 1, 'a', [1, 2]]}
+431
+* {'output': []}
+432
+* {'output': False}
+433
+* None
+def f(text: str) -> str:
+    """"""
+    ### Canonical solution below ###
+    text = text.split(',')
+    text.pop(0)
+    text.insert(0, text.pop(text.index('T')))
+    return 'T' + ',' + ','.join(text)
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate("Dmreh,Sspp,T,G ,.tB,Vxk,Cct") == 'T,T,Sspp,G ,.tB,Vxk,Cct'
+
+def test_check():
+    check(f)
+434
+* {'output': 6}
+435
+* {'output': 'a b c'}
+436
+* {'output': ['x', 'a', 'm']}
+437
+* {'output': {'c': None}}
+438
+* {'output': 'example'}
+439
+* {'output': 'example'}
+440
+* {'output': 'no'}
+441
+* {'output': {1: 'a', 2: 'b', 'example': 'example'}}
+442
+* {'output': [1, 2, 3]}
+443
+* {'output': 'example'}
+444
+* {'output': [3, 3]}
+445
+* {'output': 'Example'}
+446
+* {'output': [3, 2, 1]}
+447
+* {'output': 'example'}
+448
+* {'output': True}
+449
+* {'output': False}
+450
+* {'output': 'example'}
+451
+* {'output': ['e', 'x', 'a', 'm', 'p', 'l', 'e']}
+452
+* {'output': 7}
+453
+* {'output': True}
+454
+* {'output': {'a': 'b'}}
+455
+* {'output': 'example'}
+456
+* {'output': 'example'}
+457
+* {'output': []}
+458
+* {'output': 'example'}
+459
+* {'output': {'a': 'b', 'b': 'a'}}
+460
+* {'output': 'example'}
+461
+* {'output': True}
+462
+* {'output': 'eeeeeee'}
+463
+* {'output': {3: 4}}
+464
+* {'output': 'NAN'}
+465
+* None
+from typing import List, Dict, Union
+
+def f(seq: List[str], value: str) -> Dict[str, str]:
+    """"""
+    ### Canonical solution below ###
+    roles = dict.fromkeys(seq, 'north')
+    if value:
+        roles.update(key.strip() for key in value.split(', '))
+    return roles
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate(['wise king', 'young king'], '') == {'wise king': 'north', 'young king': 'north'}
+
+def test_check():
+    check(f)
+466
+* {'output': 'examp'}
+467
+* {'output': {'a': 1}}
+468
+* {'output': ''}
+469
+* {'output': 'exaexamplempe'}
+470
+* {'output': ['C']}
+471
+* {'output': -1}
+472
+* {'output': [1, 1, 1, 1, 1, 2]}
+473
+* {'output': 'example'}
+474
+* {'output': 'example'}
+475
+* {'output': 3}
+476
+* {'output': False}
+477
+* {'output': ('', 'example')}
+478
+* {'output': {'e': 2, 'x': 1, 'a': 1, 'm': 1, 'p': 1, 'l': 1}}
+479
+* {'output': [1]}
+480
+* {'output': 'example'}
+481
+* {'output': [1, 2, 3, 1]}
+482
+* {'output': 'example'}
+483
+* {'output': ' '}
+484
+* {'output': []}
+485
+* {'output': 'a     b    '}
+486
+* {'output': {1: 4, 2: 9, 3: 16}}
+487
+* {'output': [2]}
+488
+* {'output': 'example'}
+489
+* {'output': ''}
+490
+* {'output': ''}
+491
+* {'output': [1, 2, 3, 3, 3, 3, 3, 3, 3]}
+492
+* {'output': 'example'}
+493
+* {'output': ['a => b']}
+494
+* {'output': 'example'}
+495
+* {'output': ('ample', 'exa')}
+496
+* {'output': 2}
+497
+* {'output': ['3']}
+498
+* {'output': [1, 2, 3, 3]}
+499
+* {'output': 'example'}
+500
+* {'output': 'lpmaxe'}
+501
+* {'output': 'example'}
+502
+* {'output': 'example'}
+503
+* None
+from typing import Dict, List, Tuple
+
+def f(d: Dict[int, int]) -> List[int]:
+    """"""
+    ### Canonical solution below ###
+    result = [None] * len(d)
+    a = b = 0
+    while d:
+        result[a] = d.popitem(a == b)
+        a, b = b, (b+1) % len(result)
+    return result
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate({}) == []
+
+def test_check():
+    check(f)
+504
+* {'output': [1, 2, 3]}
+505
+* {'output': 'example'}
+506
+* {'output': 'sntstots'}
+507
+* {'output': 0}
+508
+* {'output': 'example'}
+509
+* {'output': '003'}
+510
+* None
+from typing import Dict, Union
+
+def f(a: Dict[int, str], b: int, c: str, d: str, e: float) -> str:
+    """"""
+    ### Canonical solution below ###
+    key = d
+    if key in a:
+        num = a.pop(key)
+    if b > 3:
+        return ''.join(c)
+    else:
+        return num
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate({7: 'ii5p', 1: 'o3Jwus', 3: 'lot9L', 2: '04g', 9: 'Wjf', 8: '5b', 0: 'te6', 5: 'flLO', 6: 'jq', 4: 'vfa0tW'}, 4, 'Wy', 'Wy', 1.0) == 'Wy'
+
+def test_check():
+    check(f)
+511
+* {'output': {'a': 'b', 'b': '', 'c': ''}}
+512
+* {'output': False}
+513
+* {'output': [2, 3]}
+514
+* {'output': 'example'}
+515
+* {'output': [6, 4, 2]}
+516
+* {'output': []}
+517
+* {'output': 'exampl'}
+518
+* {'output': True}
+519
+* {'output': {1: False, 2: True}}
+520
+* None
+from typing import List
+
+def f(album_sales: List[int]) -> int:
+    """"""
+    ### Canonical solution below ###
+    while len(album_sales) != 1:
+        album_sales.append(album_sales.pop(0))
+    return album_sales[0]
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate([6]) == 6
+
+def test_check():
+    check(f)
+521
+* {'output': [3, 2, 1]}
+522
+* {'output': []}
+523
+* {'output': 'example'}
+524
+* {'output': {1: 0, 2: 1, 3: 4}}
+525
+* {'output': ('b', 'b')}
+526
+* {'output': 'exampleample'}
+527
+* {'output': 'example'}
+528
+* {'output': 6}
+529
+* {'output': [1, 2, 3]}
+530
+* {'output': '!?'}
+531
+* {'output': 'example'}
+532
+* {'output': [[1, 2, 3], [1, 2, 3, 1, 2, 3], [1, 2, 3, 1, 2, 3, 1, 2, 3], [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]]}
+533
+* {'output': 0}
+534
+* {'output': 'example'}
+535
+* {'output': False}
+536
+* {'output': 0}
+537
+* {'output': '[8]'}
+538
+* {'output': 'exa'}
+539
+* {'output': ['a', 'b', 'c', '']}
+540
+* {'output': [1, 1, 2, 3, 1]}
+541
+* {'output': False}
+542
+* {'output': ['', '']}
+543
+* {'output': 'Example'}
+544
+* {'output': 'example'}
+545
+* {'output': [3]}
+546
+* {'output': ''}
+547
+* {'output': 'example'}
+548
+* {'output': ''}
+549
+* {'output': [[4, 3], [2, 1]]}
+550
+* {'output': [1, 1, 1, 1, 2, 3]}
+551
+* {'output': ['b', 'c']}
+552
+* None
+from typing import Dict, Union, List
+
+def f(d: Dict[Union[int, float], Union[float, List[int]]]) -> Dict[Union[int, float], Union[float, List[int]]]:
+    """"""
+    ### Canonical solution below ###
+    result = {}
+    for k, v in d.items():
+        if isinstance(k, float):
+            for i in v:
+                result[i] = k
+        else:
+            result[k] = v
+    return result
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate({2: 0.76, 5: [3, 6, 9, 12]}) == {2: 0.76, 5: [3, 6, 9, 12]}
+
+def test_check():
+    check(f)
+553
+* {'output': 'elpmaxe'}
+554
+* {'output': [3, 2, 1]}
+555
+* {'output': 'example'}
+556
+* {'output': 'example'}
+557
+* None
+def f(s: str) -> str:
+    """"""
+    ### Canonical solution below ###
+    d = str.rpartition('ar')
+    return ' '.join((d[0], d[1], d[2]))
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate('xxxarmmarxx') == 'xxxarmm ar xx'
+
+def test_check():
+    check(f)
+558
+* {'output': True}
+559
+* {'output': 'e.xample'}
+560
+* None
+def f(text: str) -> int:
+    """"""
+    ### Canonical solution below ###
+    x = 0
+    if text.islower():
+        for c in text:
+            if int(c) in list(range(90)):
+                x+=1
+    return x
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate("591237865") == 0
+
+def test_check():
+    check(f)
+561
+* None
+def f(text: str, digit: str) -> int:
+    """"""
+    ### Canonical solution below ###
+    #different than previous? Just count instances digit
+    count = text.count(digit)
+    return int(digit) * count
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate('7Ljnw4Lj', '7') == 7
+
+def test_check():
+    check(f)
+562
+* {'output': False}
+563
+* {'output': 9}
+564
+* None
+from typing import List
+
+def f(lists: List[List[int]]) -> List[int]:
+    """"""
+    ### Canonical solution below ###
+    lists[1].clear()
+    lists[2] += lists[1]
+    return lists[0]
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate([[395, 666, 7, 4], [], [4223, 111]]) == [395, 666, 7, 4]
+
+def test_check():
+    check(f)
+565
+* {'output': 2}
+566
+* {'output': ''}
+567
+* {'output': ['example', '']}
+568
+* {'output': 'example'}
+569
+* {'output': 7}
+570
+* {'output': [4, 1, 2, 3, 3]}
+571
+* {'output': 'example'}
+572
+* {'output': []}
+573
+* {'output': ''}
+574
+* {'output': 'a'}
+575
+* {'output': 18}
+576
+* {'output': ['x', '-2', '3', '-6']}
+577
+* {'output': [{1: 'a'}, {}]}
+578
+* {'output': {'a': -1, 'b': -2}}
+579
+* {'output': 'Example'}
+580
+* {'output': [0]}
+581
+* {'output': 'examxplaeemple'}
+582
+* {'output': [3, 3, 3]}
+583
+* {'output': 'EXAMPLE'}
+584
+* {'output': 'example'}
+585
+* {'output': 'ample'}
+586
+* {'output': 0}
+587
+* {'output': {1: 'example', 2: 'example', 3: 'example'}}
+588
+* {'output': -1}
+589
+* {'output': [1, 2, 3, 3]}
+590
+* {'output': 'example'}
+591
+* {'output': ([0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 2, 3])}
+592
+* {'output': [3, 2, 1]}
+593
+* {'output': [1, 2, 3, 1, 1, 3]}
+594
+* None
+def f(file: str) -> int:
+    """"""
+    ### Canonical solution below ###
+    return file.index('\n')
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate("n wez szize lnson tilebi it 504n.\n") == 33
+
+def test_check():
+    check(f)
+595
+* {'output': ''}
+596
+* {'output': ['c', 'b', 'a']}
+597
+* {'output': 'EXAMPLE'}
+598
+* {'output': ''}
+599
+* {'output': ['a', 'examplebexamplec', 'xam', 'plebexamplec', 'mpleb', 'examplec', 'lebexam', 'plec', 'bexamplec', '', 'xamplec', '', 'mplec', '', 'lec', '', 'c', '']}
+600
+* {'output': ['n', 'nn', 'nnn']}
+601
+* {'output': 'EEEEE xxxxx AAAAA mmmmm ppppp lllll EEEEE'}
+602
+* {'output': 2}
+603
+* {'output': 'not oscillating'}
+604
+* {'output': True}
+605
+* {'output': 'quack'}
+606
+* {'output': 'exampleNHIB'}
+607
+* {'output': False}
+608
+* {'output': {1: 2, 2: 3, 3: 4}}
+609
+* None
+from typing import Dict, Any
+
+def f(array: Dict[int, int], elem: int) -> Dict[int, int]:
+    """"""
+    ### Canonical solution below ###
+    result = array.copy()
+    while result:
+        key, value = result.popitem()
+        if elem == key or elem == value:
+            result.update(array)
+        del result[key]
+    return result
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate({}, 1) == {}
+
+def test_check():
+    check(f)
+610
+* {'output': {}}
+611
+* {'output': [3, 2, 1]}
+612
+* {'output': {'a': 1, 'b': 2}}
+613
+* {'output': 'exaelpe'}
+614
+* {'output': -1}
+615
+* {'output': 2}
+616
+* {'output': '[e][x][a][m][p][l]e'}
+617
+* {'output': 'ascii'}
+618
+* {'output': 'exaexample'}
+619
+* {'output': 'example'}
+620
+* {'output': 'e l p m a x e'}
+621
+* {'output': "<class 'LookupError'>"}
+622
+* {'output': ', e, x, a, m, p, l, e, '}
+623
+* {'output': 'example'}
+624
+* {'output': 'example'}
+625
+* {'output': 0}
+626
+* {'output': 'exbmple'}
+627
+* {'output': [1, 2]}
+628
+* {'output': [1, 2]}
+629
+* {'output': ''}
+630
+* {'output': {1: 2, 2: 1, 3: 2, 4: 3}}
+631
+* {'output': 'eap'}
+632
+* None
+from typing import List
+
+def f(lst: List[int]) -> List[int]:
+    """"""
+    ### Canonical solution below ###
+    for i in range(len(list) - 1, 0, -1):
+        for j in range(i):
+            if list[j] > list[j + 1]:
+                list[j], list[j + 1] = list[j + 1], list[j]
+                list.sort()
+    return list
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate([63, 0, 1, 5, 9, 87, 0, 7, 25, 4]) == [0, 0, 1, 4, 5, 7, 9, 25, 63, 87]
+
+def test_check():
+    check(f)
+633
+* {'output': 0}
+634
+* {'output': 'ixompli'}
+635
+* {'output': True}
+636
+* {'output': {1: 'a', 2: 'b'}}
+637
+* {'output': 'no'}
+638
+* {'output': ''}
+639
+* {'output': ''}
+640
+* {'output': 2}
+641
+* {'output': False}
+642
+* {'output': 'no'}
+643
+* {'output': 'examplE'}
+644
+* {'output': [1, 2, 3]}
+645
+* {'output': 1}
+646
+* {'output': 'elpmaxe'}
+647
+* {'output': ['example']}
+648
+* {'output': 'missing'}
+649
+* {'output': 'example'}
+650
+* {'output': ''}
+651
+* {'output': 'Example'}
+652
+* None
+def f(string: str) -> str:
+    """"""
+    ### Canonical solution below ###
+    if not string or not string[0].isnumeric:
+        return 'INVALID'
+    cur = 0
+    for i in range(len(string)):
+        cur = cur * 10 + int(string[i])
+    return str(cur)
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate('3') == '3'
+
+def test_check():
+    check(f)
+653
+* {'output': 1}
+654
+* {'output': 'example'}
+655
+* {'output': 'exmple'}
+656
+* {'output': 'yes'}
+657
+* {'output': 'Example'}
+658
+* {'output': ['a', 'b', None]}
+659
+* {'output': 3}
+660
+* {'output': 4}
+661
+* {'output': 'example'}
+662
+* {'output': ['Angela', 'Linda', 'Pete', 'a', 'b', 'c']}
+663
+* {'output': [1, 2]}
+664
+* {'output': 'a '}
+665
+* {'output': 'ExamplE'}
+666
+* {'output': 4}
+667
+* {'output': ['< exa level=0 >', '< mpl level=1 >', '< e level=2 >']}
+668
+* {'output': 'eexampl'}
+669
+* {'output': 'example'}
+670
+* {'output': [3, 2, 1]}
+671
+* {'output': 'example'}
+672
+* {'output': 'example'}
+673
+* {'output': 'EXAMPLE'}
+674
+* {'output': 'example'}
+675
+* {'output': [1, 2, 3]}
+676
+* {'output': 'example'}
+677
+* {'output': 'exa'}
+678
+* {'output': {'e': 2, 'x': 1, 'a': 1, 'm': 1, 'p': 1, 'l': 1}}
+679
+* {'output': True}
+680
+* {'output': 'example'}
+681
+* {'output': [1, 2, 3, 3]}
+682
+* {'output': 'exa'}
+683
+* {'output': {'a': 1, 'b': 2}}
+684
+* {'output': 'example'}
+685
+* {'output': 4}
+686
+* {'output': {'a': 1, 'b': 2}}
+687
+* {'output': 'e:x:a:p:l:e:example'}
+688
+* {'output': [1, 2, 3]}
+689
+* {'output': [5, 2, 15]}
+690
+* {'output': 'example'}
+691
+* {'output': ''}
+692
+* {'output': [1, 2, 3]}
+693
+* {'output': ''}
+694
+* {'output': ('b', {'a': 1})}
+695
+* None
+from typing import Dict, Any, List
+
+def f(d: Dict[str, List[Any]]) -> Dict[str, List[Any]]:
+    """"""
+    ### Canonical solution below ###
+    result = {}
+    for ki, li in d.items():
+        result.update({ki: []})
+        for kj, dj in enumerate(li):
+            result[ki].append({})
+            for kk, l in dj.items():
+                result[ki][kj][kk] = l.copy()
+    return result
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate({}) == {}
+
+def test_check():
+    check(f)
+696
+* {'output': 21}
+697
+* {'output': ('', 'example', '')}
+698
+* {'output': 'example'}
+699
+* {'output': ['abcdefg', 'example']}
+700
+* {'output': 7}
+701
+* {'output': 'example'}
+702
+* {'output': [3, 2, 1]}
+703
+* {'output': 'example'}
+704
+* {'output': 'exampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexample'}
+705
+* {'output': []}
+706
+* {'output': ['example', 'example']}
+707
+* {'output': 'exaple'}
+708
+* {'output': 'example'}
+709
+* {'output': 'example'}
+710
+* {'output': {'a': ['b', 'c'], 'example': ['example']}}
+711
+* {'output': 'example'}
+712
+* {'output': [['e']]}
+713
+* {'output': False}
+714
+* {'output': []}
+715
+* {'output': True}
+716
+* {'output': []}
+717
+* {'output': 'e'}
+718
+* {'output': '0example'}
+719
+* {'output': 'e xample'}
+720
+* None
+def f(items: str, item: str) -> int:
+    """"""
+    ### Canonical solution below ###
+    while items[-1] == item:
+        items.pop()
+    items.append(item)
+    return len(items)
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate('bfreratrrbdbzagbretaredtroefcoiqrrneaosf', 'n') == 2
+
+def test_check():
+    check(f)
+721
+* {'output': [1, 2, 3]}
+722
+* {'output': 'EXAMPLE'}
+723
+* {'output': ['e x a m p l e']}
+724
+* {'output': [0]}
+725
+* {'output': 7}
+726
+* {'output': (0, 7)}
+727
+* {'output': ['a', 'b', 'c']}
+728
+* {'output': ''}
+729
+* {'output': [6]}
+730
+* {'output': 1}
+731
+* {'output': ''}
+732
+* {'output': {'a': 0, 'b': 1}}
+733
+* {'output': 'exaelpm'}
+734
+* {'output': [1, 3]}
+735
+* {'output': 'Example'}
+736
+* {'output': 'example'}
+737
+* {'output': 1}
+738
+* {'output': 'examp'}
+739
+* {'output': False}
+740
+* {'output': [1, 2]}
+741
+* {'output': 3}
+742
+* {'output': False}
+743
+* {'output': -14}
+744
+* {'output': 'exampleexample'}
+745
+* {'output': ':,."& /abc@_()-'}
+746
+* {'output': {'b': 'b@pinc.uk'}}
+747
+* {'output': False}
+748
+* {'output': (('a', 1), ('b', 2))}
+749
+* {'output': 'example'}
+750
+* {'output': 'exbmple'}
+751
+* {'output': 'EXAMPLE'}
+752
+* {'output': 'example'}
+753
+* {'output': {2: 1, 3: 1, 4: 1}}
+754
+* {'output': []}
+755
+* {'output': 'example'}
+756
+* {'output': 'string'}
+757
+* {'output': 'example'}
+758
+* {'output': False}
+759
+* {'output': [0]}
+760
+* {'output': ['b', 'a']}
+761
+* {'output': [1, 2, 3]}
+762
+* {'output': 'example'}
+763
+* {'output': ''}
+764
+* {'output': 'example'}
+765
+* {'output': 0}
+766
+* {'output': {'a': 3, 'b': 3, 'c': 3, 'abc': 9}}
+767
+* {'output': '-'}
+768
+* {'output': 'example'}
+769
+* {'output': 'EXAMPLE'}
+770
+* {'output': 'aexampleaa'}
+771
+* {'output': [-2, 0, 2]}
+772
+* {'output': ''}
+773
+* {'output': 3}
+774
+* {'output': 'quiz leader = example, count = 3'}
+775
+* {'output': [3, 2, 1]}
+776
+* None
+from typing import Dict
+
+def f(dictionary: Dict[int, int]) -> Dict[str, int]:
+    """"""
+    ### Canonical solution below ###
+    a = dictionary.copy()
+    for key in a:
+        if key%2 != 0:
+            del a[key]
+            a['$'+str(key)] = a[key]
+    return a
+
+### Unit tests below ###
+def check(candidate):
+    assert candidate({}) == {}
+
+def test_check():
+    check(f)
+777
+* {'output': ['a', 'b', 'c']}
+778
+* {'output': 'example'}
+779
+* {'output': '${first}y, ${second}x, ${third}r, ${fourth}p'}
+780
+* {'output': ''}
+781
+* {'output': ''}
+782
+* {'output': True}
+783
+* {'output': 7}
+784
+* {'output': ('example', 'example')}
+785
+* {'output': '3     '}
+786
+* {'output': 'xamplee'}
+787
+* {'output': 'Example'}
+788
+* {'output': 'example'}
+789
+* {'output': ''}
+790
+* {'output': (False, True)}
+791
+* {'output': '003'}
+792
+* {'output': {'a': ['a', 'b', 'c'], 'b': ['a', 'b', 'c'], 'c': ['a', 'b', 'c']}}
+793
+* {'output': 0}
+794
+* {'output': 'example'}
+795
+* {'output': 'Example'}
+796
+* {'output': ''}
+797
+* {'output': [('a', 1), ('b', 2)]}
+798
+* {'output': ''}
+799
+* {'output': 'nnnexample'}
