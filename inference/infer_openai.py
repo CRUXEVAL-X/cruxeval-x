@@ -35,7 +35,7 @@ if __name__ == '__main__':
     parser.add_argument('--data_input_output', type=str, default=f'./datasets/cruxeval_preprocessed')
     parser.add_argument('--example_root', type=str, default=f'./datasets/examples')
     parser.add_argument('--example_input_output', type=str, default=f'./datasets/examples_preprocessed')
-    parser.add_argument('--output_dir', type=str, default=f'./datasets/infer_output')
+    parser.add_argument('--output_dir', type=str, default=f'./infer_results')
 
 
 

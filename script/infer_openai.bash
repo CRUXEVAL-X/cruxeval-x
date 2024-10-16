@@ -9,4 +9,4 @@ python inference/infer_openai.bash \
     --data_input_output ./datasets/cruxeval_preprocessed \
     --example_root ./datasets/examples \
     --example_input_output ./datasets/examples_preprocessed \
-    --output_dir ./datasets/infer_output
+    --output_dir ./infer_results
