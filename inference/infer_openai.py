@@ -19,7 +19,6 @@ def gen_result(examples, model: str):
     prompts = [ex["prompt"] for ex in examples]
     for i in tqdm(range(len(examples)),total= len(examples)):
         examples[i]['generation'] = gpt_response(prompts[i], tmp = 0, stop=stop,model_name=args.model_name,base_url=args.base_url,api_key=args.api_key)
-        print(examples[i]['generation'])
     return examples
 
 if __name__ == '__main__':

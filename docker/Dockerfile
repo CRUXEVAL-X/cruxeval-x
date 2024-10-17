@@ -27,7 +27,7 @@ RUN curl -fsSL https://deb.nodesource.com/setup_current.x | bash -
 RUN apt-get install -y nodejs
 RUN npm install -g typescript
 
-# Dlang
+# Dlang need network
 RUN wget https://netcologne.dl.sourceforge.net/project/d-apt/files/d-apt.list -O /etc/apt/sources.list.d/d-apt.list
 RUN apt-get update --allow-insecure-repositories
 RUN apt-get -y --allow-unauthenticated install --reinstall d-apt-keyring
@@ -103,9 +103,8 @@ RUN clojure -P
 # install python packeges
 RUN apt-get install -y git
 RUN ln -s /usr/bin/python3 /usr/bin/python
-COPY requirements.txt .
 RUN python -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 RUN python -m pip install transformers[torch]
 RUN python -m pip install datasets
 RUN python -m pip install simhash
-RUN python -m pip install vllm
+RUN python -m pip install vllm==0.6.2
