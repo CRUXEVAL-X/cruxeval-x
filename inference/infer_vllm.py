@@ -89,6 +89,7 @@ if __name__ == '__main__':
         prompts = {}
         # construct prompt
         for task_type in ["input","output"]:
+            print(task_type)
             examples = []
             for example in example_data:
                 code = example["code"]
@@ -117,15 +118,12 @@ if __name__ == '__main__':
                 code += code_right_part
                 cur_prompt.append({"prompt":prompt_func[task_type](lang,examples,code),
                                    "task_id":sample["id"]})
-                print(cur_prompt[-1]["prompt"])
             prompts[task_type] = cur_prompt
         # generate answers
         for task_type in ["input","output"]:
-            print(task_type)
             cur_prompt = prompts[task_type]
             gen_res = gen_result(cur_prompt,tokenizer,llm,lang,"no")
             for cur_res in gen_res:
-                print(cur_res["generation"])
                 cur_res["generation"] = cur_res["generation"].replace("[ANSWER]","")
             # judege the answer
             outputs = [{"id":i,"res":0} for i in range(args.tot_data_num)]
