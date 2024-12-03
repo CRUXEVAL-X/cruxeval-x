@@ -11,4 +11,4 @@ python dataset_build/4_repair_generating.py \
     --python_dir ./datasets/cruxeval \
     --example_dir ./MutiPL-E/evaluation/test_inputs \
     --pre_dir ./datasets/cruxeval_generated \
-    --output_dir ./datasets/cruxeval_generated \
+    --output_dir ./datasets/cruxeval_generated

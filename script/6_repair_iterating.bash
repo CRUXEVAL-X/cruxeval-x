@@ -10,4 +10,4 @@ python dataset_build/6_repair_iterating.py \
     --tests_dir ./datasets/cruxeval_preprocessed \
     --right_dir ./datasets/cruxeval_iterated \
     --python_dir ./datasets/cruxeval \
-    --output_dir ./datasets/cruxeval_iterated_repaired \
+    --output_dir ./datasets/cruxeval_iterated_repaired
