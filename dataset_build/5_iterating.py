@@ -47,7 +47,7 @@ if __name__ == '__main__':
     parser.add_argument('--langs', type=str, default="['cpp']")
     parser.add_argument('--model_name', type=str, default='deepseek-coder-33b-instruct')
     parser.add_argument('--model_dir', type=str, default='./model')
-    parser.add_argument('--tmp', type=int, default=0.8)
+    parser.add_argument('--tmp', type=float, default=0.8)
     parser.add_argument('--shot_num', type=int, default=3)
     parser.add_argument('--max_iter', type=int, default=50)
     parser.add_argument('--tot_data_num', type=int, default=800)
@@ -124,7 +124,7 @@ if __name__ == '__main__':
             num_right_id.append(len(right_id))
             if cur_iter > 10 and len(right_id) == num_right_id[-5]:
                 break
-        
+
             for index,sample in enumerate(ds_python_new_test):
                 if index in right_id: continue # if already correct, skip
                 if index not in test_dic: continue # if not in test_dic, skip
@@ -155,7 +155,7 @@ if __name__ == '__main__':
                     code_status["id"] = cur_id
                     final_res[cur_id] = code_status
                     right_id.append(cur_id)
-            
+
             # save the result
             with open(f"{args.output_dir}/{lang}.json", "w", encoding="utf-8") as f:
                 json.dump(final_res, f, ensure_ascii=False, indent=4)
