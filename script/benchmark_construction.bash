@@ -38,7 +38,7 @@ python dataset_build/3_generating.py \
     --tests_dir ./datasets/cruxeval_preprocessed \
     --python_dir ./datasets/cruxeval \
     --example_dir ./MutiPL-E/evaluation/test_inputs \
-    --output_dir ./datasets/cruxeval_generated
+    --output_dir ./datasets/cruxeval_generated_repaired
 
 echo 3_generating done
 
