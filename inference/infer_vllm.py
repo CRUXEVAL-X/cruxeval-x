@@ -48,6 +48,7 @@ if __name__ == '__main__':
     parser.add_argument('--example_root', type=str, default=f'./datasets/examples')
     parser.add_argument('--example_input_output', type=str, default=f'./datasets/examples_preprocessed')
     parser.add_argument('--output_dir', type=str, default=f'./infer_results')
+    parser.add_argument('--codabench', type=bool, default=False)
 
 
     args = parser.parse_args()
@@ -55,6 +56,8 @@ if __name__ == '__main__':
 
     model_name_or_path = f"{args.model_dir}/{args.model_name}"
     output_dir = f"{args.output_dir}/{args.model_name}"
+    if args.codabench:
+        output_dir = f"{args.output_dir}/{args.model_name}_codabench"
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
@@ -132,21 +135,28 @@ if __name__ == '__main__':
                 cur_id = cur_res["task_id"]
                 code = cur_prompt[index]["prompt"].split(f"```{lang}")[-1]
                 code = code.replace(f"```","")
-                if task_type == "output":
-                    code = code.replace("????",answer)
-                else:
-                    code = code.replace(input_map[lang], answer)
-                exec_output = eval_code(lang_map[lang], code)
-                if exec_output["status"] != "OK":
-                    outputs[cur_id]["res"] = False
-                    outputs[cur_id]["error"] = exec_output["status"]
-                    outputs[cur_id]["error_message"] = exec_output["stderr"]
+
+                # judge weather calcultate the result
+                if args.codabench:
+                    del outputs[cur_id]["res"]
                     outputs[cur_id]["code"] = code
                     outputs[cur_id]["answer"] = answer
                 else:
-                    outputs[cur_id]["res"] = True
-                    outputs[cur_id]["code"] = code
-                    outputs[cur_id]["answer"] = answer
+                    if task_type == "output":
+                        code = code.replace("????",answer)
+                    else:
+                        code = code.replace(input_map[lang], answer)
+                    exec_output = eval_code(lang_map[lang], code)
+                    if exec_output["status"] != "OK":
+                        outputs[cur_id]["res"] = False
+                        outputs[cur_id]["error"] = exec_output["status"]
+                        outputs[cur_id]["error_message"] = exec_output["stderr"]
+                        outputs[cur_id]["code"] = code
+                        outputs[cur_id]["answer"] = answer
+                    else:
+                        outputs[cur_id]["res"] = True
+                        outputs[cur_id]["code"] = code
+                        outputs[cur_id]["answer"] = answer
                     
             with open(f"{output_dir}/{lang}_{task_type}.json","w",encoding="utf-8") as f:
                 json.dump(outputs,f,indent=4,ensure_ascii=False)

@@ -1,3 +1,22 @@
+<p align="center">
+<h1 align="center">CRUXEVAL-X: A Benchmark for Multilingual Code
+
+ Reasoning, Understanding and Execution</h1>
+
+<p align="center">
+    <a href="https://huggingface.co/datasets/xhwl/cruxeval-x"><img alt="Dataset" src="https://img.shields.io/badge/🤗 HuggingFace-Dataset-green"></a>
+    <a href="https://cruxeval-x.github.io/leaderboard.html"><img alt="Leaderboard" src="https://img.shields.io/badge/🏆-Leaderboard-blue"></a>
+    <a href="https://arxiv.org/pdf/2408.13001"><img alt="Paper" src="https://img.shields.io/badge/📄-Paper-orange"></a>
+    <a href="https://benchmark.icip.org.cn/competitions/38/#/participate-tab"><img src="https://img.shields.io/badge/Submit-Codabench-blueviolet"></a>
+</p>
+
+# Dataset Description
+CRUXEVAL-X stands as a multi-lingual code reasoning benchmark, encompassing 19 programming languages and built upon the foundation of CRUXEVAL. This comprehensive resource features a minimum of 600 subjects per language, collectively contributing to a robust total of 19,000 content-consistent tests.
+
+In this repository, we provide this dataset and the method to construct the benchmark.
+
+![](img/code_reasoning.png)
+
 # Usage
 ## Environment
 
@@ -24,7 +43,7 @@ bash ./script/benchmark_construction.sh
 if you want to run only one step, find the script for the specific step in ./script and run it.
 
 ## Dataset
-all the dataset is in ./data, data dir start with "example" is the examples used for few-shot inferences. The final data is in ./data/cruxeval_preprocessed, which you can also download in [hugging face](https://huggingface.co/datasets/xhwl/cruxeval-x).
+all the dataset is in ./data, data dir start with "example" is the examples used for few-shot inferences. The final data is in ./data/cruxeval_preprocessed, which you can also download in 🤗 [hugging face](https://huggingface.co/datasets/xhwl/cruxeval-x).
 
 the data is in the format of json, each line is a json object, the format is:
 ```json
@@ -49,22 +68,37 @@ for close-source models, you need to provide the model name, api key and base ur
 cd ./cruxeval-x
 bash ./script/inference_openai.bash
 ```
+## Results
+We have evaluated some models on our benchmark. The results can be found in our [leaderboard](https://cruxeval-x.github.io/leaderboard.html).
+
+We also provide the detail inference results for each model. You can find the example phi-1 result in `./cruxeval-x/infer_results/phi-1`. For all the LLMs results, you can download them from [here](https://drive.google.com/file/d/1mdb5Alf2_Vw-Ej3g_h7d_Vtes6_56Z76/view).
+
 ## Submission
 
-Now you have the results of your model on the dataset.
+If you want to submit your model results to our benchmark, you can submit it to our [Codabench platform](https://benchmark.icip.org.cn/competitions/38/#/participate-tab)
 
-- `./cruxeval-x/infer_results/${model_name}/`: The Result of your LLM.
+We provide the inference script in `./cruxeval-x/script/inference_codabench.bash`, you can run it to get the inference results.
+```bash
+cd ./cruxeval-x
+bash ./script/inference_codabench.bash
+```
 
+We also provide the example for submission to our codabench in `./cruxeval-x/infer_results/phi-1_codabench`
 
-The next step is to submit a pull request for the project:
+Following is the detail description of the submission format:
 
-1. [Fork](https://help.github.com/articles/fork-a-repo/) the repository into your own GitHub account.
-2. [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) the repository to your local.
-3. Checkout a new branch from main.
-4. Make the results directories above (i.e. `./cruxeval-x/infer_results/${model_name}/`).
-5. Submit the Pull Request.
-6. The maintainers will review your Pull Request soon.
-
-- `./cruxeval-x/infer_results/phi-1` is an example for you to reference.
-
-Once your pull request is accepted, we will update the [Leaderboard](https://cruxeval-x.github.io/leaderboard.html) with your results.
+```python
+├── phi-1_codabench.zip # you should zip all the files in this folder
+│   ├── cpp_input.json # the file name should in this format: {lang}_{task}.json
+        {
+            "id": "index of the code in cruxeval",
+            "code": "input code with '????'",
+            "answer": "the answer of your model"
+        }
+        # if you want to ignore some problems, you can only give the "id" without "code" and "answer"
+...
+│   ├── cpp_output.json
+│   ├── cs_input.json
+│   ├── cs_output.json
+```
+The final file you submit to codabench is same as the example in `./cruxeval-x/infer_results/phi-1_codabench/phi-1_codabench.zip`, 

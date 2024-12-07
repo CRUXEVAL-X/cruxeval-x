@@ -14,6 +14,7 @@ import eval_lua
 import eval_racket
 import eval_javascript
 import eval_swift
+import eval_c
 import eval_cpp
 import eval_php
 import eval_dlang
@@ -46,6 +47,7 @@ EVALUATORS = {
     "rkt": (eval_racket.eval_script, ".rkt"),
     "javascript": (eval_javascript.eval_script, ".js"),
     "js": (eval_javascript.eval_script, ".js"),
+    "c": (eval_c.eval_script, ".c"),
     "cpp": (eval_cpp.eval_script, ".cpp"),
     "php": (eval_php.eval_script, ".php"),
     "humaneval_to_dlang.py": (eval_dlang.eval_script, ".d"),
